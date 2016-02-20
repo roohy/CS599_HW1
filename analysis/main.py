@@ -2,7 +2,7 @@
 
 from pymongo import MongoClient
 import config
-from BFA import BFAfunction
+from BFA  import BFAfunction,storeSig
 
 if __name__ == '__main__':
     print("Starting to the Analysis Process")
@@ -13,8 +13,8 @@ if __name__ == '__main__':
     collection = DB[config.COLLECTIONNAME]
     for type in config.TYPE:
         print("Analysis for Type "+ type)
-        BFAfunction(type,collection)
-
+        a =BFAfunction(type,collection)
+        storeSig(type,'/home/roohy/'+type.replace('/','_'), a[0],a[1])
 
 
     DBClient.close()

@@ -2,7 +2,7 @@ import math
 from config import ByteOrder
 import json
 SIGMA2_2 = 2*0.0375*0.0375
-
+ULAW = 255
 def BFAfunction(type, collection):
     typeSig = []
     coFactor = []
@@ -12,10 +12,11 @@ def BFAfunction(type, collection):
         typeSig.append(0)
         coFactor.append(0)
         tempCoFactor.append(0)
+    flag = False
     for file in collection.find({'type':type}):
         signature = byteSignature(file['path'])
         # print(signature)
-        flag = False
+
         for i in range(0,256):
             if flag:
                 diff = typeSig[i]-signature[i]
@@ -26,6 +27,7 @@ def BFAfunction(type, collection):
 
         totalWeight += 1
         flag = True
+    print("Total Number of Files went through BFA: ",totalWeight)
     return [typeSig,coFactor]
 
 
@@ -41,11 +43,25 @@ def byteSignature(filePath):
             signature[int.from_bytes(byte,ByteOrder)] += 1
             byte = f.read(1)
     maximum = float(max(signature))
-    signature = [float(x)/maximum for x in signature]
+    signature = [ulaw(float(x)/maximum) for x in signature]
     return signature
 
 def storeSig(type,path,typeSig, CoFactor):
     FILE = open(path,'w')
     result = {'signature':typeSig,'corelation':CoFactor}
     FILE.write(json.dumps(result))
+    FILE.close()
+'''def extend(listed):
+    minimum = min(list)
+    maximum = max(list)
+    if minimum > 0.001:
+        minDiff = '''
 
+def storeJSON(path, dic):
+    FILE = open(path,'w')
+    FILE.write(json.dumps(dic))
+    FILE.close()
+
+
+def ulaw(x,u=ULAW):
+    return (math.copysign(1,x)*(1+u*math.fabs(x)))/(1+u)

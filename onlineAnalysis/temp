@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns="http://my.netscape.com/rdf/simple/0.9/">
+
+<channel>
+<title>The Perl Review</title>
+<link>http://www.theperlreview.com/</link>
+</channel>
+
+<item>
+<title>Extreme Publishing, by brian d foy</title>
+<link>http://www.theperlreview.com/Articles/v0i0/extreme_publishing.0.0.pdf</link>
+</item>
+
+<item>
+<title>Structured Classes in Perl, by Robby Walker</title>
+<link>http://www.theperlreview.com/Articles/v0i0/structured_classes.pdf</link>
+</item>
+
+<item>
+<title>Benchmarking Perl, by brian d foy</title>
+<link>http://www.theperlreview.com/Articles/v0i5/benchmarking_perl.pdf</link>
+</item>
+
+<item>
+<title>Extreme Publishing: Post-mortems, by brian d foy</title>
+<link>http://www.theperlreview.com/Articles/v0i1/extreme_publishing-postmortems.pdf</link>
+</item>
+
+<item>
+<title>Perl One-liners, by Jeff Bay</title>
+<link>http://www.theperlreview.com/Articles/v0i1/one-liners.pdf</link>
+</item>
+
+<item>
+<title>Parroty Bit 0, by Dan Sugalski</title>
+<link>http://www.theperlreview.com/Articles/v0i1/parroty_bit_0.pdf</link>
+</item>
+
+<item>
+<title>The Singleton Design Pattern, by brian d foy</title>
+<link>http://www.theperlreview.com/Articles/v0i1/singletons.pdf</link>
+</item>
+
+<item>
+<title>Guido van Rossum, by Adam Turoff</title>
+<link>http://www.theperlreview.com/Articles/v0i2/guido_van_rossum.pdf</link>
+</item>
+
+<item>
+<title>The Python Software Foundation, by David Ascher</title>
+<link>http://www.theperlreview.com/Articles/v0i2/psf.pdf</link>
+</item>
+
+<item>
+<title>Tiger Woods Isn't Worried, by Mike Giroux</title>
+<link>http://www.theperlreview.com/Articles/v0i2/tiger_woods.pdf</link>
+</item>
+
+<item>
+<title>Python and the Golden Mean, by Paul Prescod</title>
+<link>http://www.theperlreview.com/Articles/v0i2/iterators.pdf</link>
+</item>
+
+<item>
+<title>Extreme Publishing: Change Happens, by brian d foy</title>
+<link>http://www.theperlreview.com/Articles/v0i3/extreme_mowing.pdf</link>
+</item>
+
+<item>
+<title>Cooking Perl with Flex, by Alberto Manuel Simoes</title>
+<link>http://www.theperlreview.com/Articles/v0i3/flex.pdf</link>
+</item>
+
+<item>
+<title>Parroty Bit 1: The Parrot Vooms, by Dan Sugalski</title>
+<link>http://www.theperlreview.com/Articles/v0i3/vooms.pdf</link>
+</item>
+
+<item>
+<title>Finding Perl Modules, by brian d foy</title>
+<link>http://www.theperlreview.com/Articles/v0i3/finding_modules.pdf</link>
+</item>
+
+<item>
+<title>Perl Golf, by Dave Hoover</title>
+<link>http://www.theperlreview.com/Articles/v0i4/golf.pdf</link>
+</item>
+
+<item>
+<title>Parroty Bit 2: BASIC, by Clinton Pierce</title>
+<link>http://www.theperlreview.com/Articles/v0i4/basic.pdf</link>
+</item>
+
+<item>
+<title>The Facade Design Pattern, by brian d foy</title>
+<link>http://www.theperlreview.com/Articles/v0i4/facade.pdf</link>
+</item>
+
+<item>
+<title>Extreme Mowing, by Andy Lester</title>
+<link>http://www.theperlreview.com/Articles/v0i5/extreme_mowing.pdf</link>
+</item>
+
+<item>
+<title>What Perl Programmers Should Know About Java, by Beth Linker</title>
+<link>http://www.theperlreview.com/Articles/v0i5/perl-java.pdf</link>
+</item>
+
+<item>
+<title>Filehandle Ties, by Robby Walker</title>
+<link>http://www.theperlreview.com/Articles/v0i5/filehandle_ties.pdf</link>
+</item>
+
+<item>
+<title>The Iterator Design Pattern, by brian d foy</title>
+<link>http://www.theperlreview.com/Articles/v0i5/iterators.pdf</link>
+</item>
+
+<item>
+<title>Simple RSS with Perl, by brian d foy</title>
+<link>http://www.theperlreview.com/Articles/v0i6/rss.pdf</link>
+</item>
+
+<item>
+<title>Delightful Languages: Ruby, Mike Stok</title>
+<link>http://www.theperlreview.com/Articles/v0i6/perl-ruby.pdf</link>
+</item>
+
+<item>
+<title>Who's Doing What? Analyzing Ethernet LAN Traffic, by Paul Barry</title>
+<link>http://www.theperlreview.com/Articles/v0i6/lan.pdf</link>
+</item>
+
+</rdf:RDF>

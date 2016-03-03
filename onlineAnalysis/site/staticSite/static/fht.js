@@ -27,7 +27,7 @@ function makeReadyFHT(types){
     }
 }
 function getSignatureAndRunFHT(type,bCount){
-    url = "/static/data/"+type+"_FHT_"+bCount;
+    url = "./static/data/"+type+"_FHT_"+bCount;
     d3.json(url,function(data){
         d3renderFHT(data.FHT,'#'+type.replace('+','-'));
     });

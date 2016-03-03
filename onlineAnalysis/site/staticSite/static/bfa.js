@@ -28,7 +28,7 @@ function makeReadyBFA(types){
     }
 }
 function getSignatureAndRunBFA(type){
-    url = "/static/data/"+type+"_BFA";
+    url = "./static/data/"+type+"_BFA";
     d3.json(url,function(data){
         d3renderBFA(data,'#'+type.replace('+','-'));
     });

@@ -80,30 +80,42 @@ function clearPage(event){
     $('.nav-sidebar li').removeClass('active');
     $(event.target.parentNode).addClass('active');
 }
-types=['application_x-msdownload','application_x-tika-msoffice','application_atom+xml','application_rdf+xml','video_mpeg'];
+TYPES = ['application_x-msdownload','application_x-tika-msoffice','application_atom+xml','application_rdf+xml','video_mpeg'];
+document.__types=['application_x-msdownload','application_x-tika-msoffice','application_atom+xml','application_rdf+xml','video_mpeg'];
 
 $(document).ready(function(){
     //load_basic_types();
+    for( var i = 0 ; i< TYPES.length ; i+=1){
+        $('#mimeSelector').append('<option value="'+TYPES[i]+'">'+ TYPES[i]+'</option>')
+    }
+    $('#mimeSelector').change(function(event){
+        $( "#mimeSelector option:selected" ).each(function() {
+
+            console.log($(this).text()+" was selected");
+            document.__types = [$(this).text()];
+        });
+
+    });
     console.log("BFA report clicked");
     $('#bfa-online').click(function(event){
         clearPage(event);
-        bfaOnline(event, types);
+        bfaOnline(event, document.__types);
     });
     $('#fht4-online').click(function(event){
         clearPage(event);
-        fhtOnline(event,types,4);
+        fhtOnline(event,document.__types,4);
     });
     $('#fht8-online').click(function(event){
         clearPage(event);
-        fhtOnline(event,types,8);
+        fhtOnline(event,document.__types,8);
     });
     $('#fht16-online').click(function(event){
         clearPage(event);
-        fhtOnline(event,types,16);
+        fhtOnline(event,document.__types,16);
     });
     $('#bfc-online').click(function(event){
         clearPage(event);
-        bfcOnline(event,types);
+        bfcOnline(event,document.__types);
     });
 });
 

@@ -36,9 +36,9 @@ function getSignatureAndRunFHT(type,bCount){
 
 //render each byte position (row of matrix)============================
 function d3renderFHT(data,id) {
-var margin = {top: 20, right: 20, bottom: 50, left: 40},
-    width = 600 - margin.left - margin.right,
-    height = Math.min(50*data.length - margin.top - margin.bottom,600);
+var margin = {top: 20, right: 50, bottom: 50, left: 40},
+    width = 800 - margin.left - margin.right,
+    height = Math.min(50*data.length - margin.top - margin.bottom, 600);
 
 /*
  * value accessor - returns the value to encode for a given data object.
@@ -94,17 +94,17 @@ var svg = d3.select(id).append("svg")
     //Mouseover tip
     var tip = d3.tip()
 		.attr('class', 'd3-tip')
-		.offset([120, 40])
+		.offset([20, 100])
 		.html(function(d,i) {
 	    return ("Byte value " + xData[i] + "<br> occurs at byte position "
-		+ yValue[i] + "<br> with correlation strength " + str[i]);
+		+ yValue[i] + "<br> with correlation strength " + Math.round(str[i]*100)/100);
 	});
 
   // x-axis
   // add the x axis and x-label
     	svg.append("g")
 	  .attr("class", "x axis")
-	  .attr("transform", "translate(0," + height + ")")
+	  .attr("transform", "translate(0," + (height+10) + ")")
 	  .call(xAxis)
 	  .selectAll("text")
 	  .attr("x", -5)
@@ -139,8 +139,8 @@ var svg = d3.select(id).append("svg")
       .data(xData)
     .enter().append("rect")
     	.attr('fill', 'grey')
-    	.attr('width',3)
-    	.attr('height',-tickDistance)
+    	.attr('width',4)
+    	.attr('height',-tickDistance+.1)
     	.attr("x", function(d,i) { return xScale(xValue[i]); })
         .attr("y", function(d,i) { return yScale(yValue[i]+1); })
         .style("fill", function(d,i) {
@@ -162,7 +162,7 @@ var svg = d3.select(id).append("svg")
 	      .data([0,1,2,3])
 	    .enter().append("g")
 	      .attr("class", "legend")
-	      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+	      .attr("transform", function(d, i) { return "translate(60," + i * 20 + ")"; });
 	var color = ["#cedb9c","#b5cf6b","#8ca252","#637939"];
 	    vals = ["<.25", "<.50", "<.75", "<1"];
 	  legend.append("rect")

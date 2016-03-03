@@ -173,3 +173,43 @@ body {
         font-weight:bold;
 	font-size:20px;
       }
+
+     /*carrina FHT*/
+       .FHTholder .axis path,
+.FHTholder .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.FHTholder .d3-tip {
+        line-height: 1;
+        font-weight: bold;
+        padding: 12px;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        border-radius: 2px;
+      }
+
+.FHTholder .axis path,.FHTholder .axis line {
+        fill: none;
+        stroke: #000;
+        stroke-width: 3;
+        shape-rendering: crispEdges;
+      }
+
+   .FHTholder .axis,.FHTholder .legend text {
+        font-size:10px;
+      }
+
+     .FHTholder .ylabel,.FHTholder .xlabel,.FHTholder .graphtitle {
+        font-weight:bold;
+	font-size:15px;
+      }
+
+.FHTholder .tooltip {
+  position: absolute;
+  width: 200px;
+  height: 28px;
+  pointer-events: none;
+}

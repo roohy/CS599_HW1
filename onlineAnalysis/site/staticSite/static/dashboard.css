@@ -213,3 +213,24 @@ body {
   height: 28px;
   pointer-events: none;
 }
+
+/*Hyesuk BFC */
+
+.BFCholder  rect.bordered {
+        stroke: #E6E6E6;
+        stroke-width:2px;
+      }
+
+   .BFCholder text.mono {
+        font-size: 9pt;
+        font-family: Consolas, courier;
+        fill: #aaa;
+      }
+
+     .BFCholder text.axis-workweek {
+        fill: #000;
+      }
+
+     .BFCholder text.axis-worktime {
+        fill: #000;
+      }

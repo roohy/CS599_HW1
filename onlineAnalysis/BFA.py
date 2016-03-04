@@ -14,24 +14,27 @@ def BFAfunction(type, collection,bucket):
         coFactor.append(0)
         tempCoFactor.append(0)
     flag = False
-    for file in collection.find({'type':type}):
-        if file['key'][-1] == '/':
-            continue
+    try:
+        for file in collection.find({'type':type}):
+            if file['key'][-1] == '/':
+                continue
 
-        bucket.download_file(file['key'], "temp" )
-        signature = byteSignature("temp")
-        # print(signature)
+            bucket.download_file(file['key'], "temp" )
+            signature = byteSignature("temp")
+            # print(signature)
 
-        for i in range(0,256):
-            if flag:
-                diff = typeSig[i]-signature[i]
-                diff *= diff
-                tempCoFactor[i] = math.exp(diff/SIGMA2_2*(-1))
-                coFactor[i] = ((coFactor[i]*(totalWeight-1))+tempCoFactor[i])/(totalWeight)
-            typeSig[i] = ((typeSig[i]*totalWeight)+signature[i])/(totalWeight+1)
+            for i in range(0,256):
+                if flag:
+                    diff = typeSig[i]-signature[i]
+                    diff *= diff
+                    tempCoFactor[i] = math.exp(diff/SIGMA2_2*(-1))
+                    coFactor[i] = ((coFactor[i]*(totalWeight-1))+tempCoFactor[i])/(totalWeight)
+                typeSig[i] = ((typeSig[i]*totalWeight)+signature[i])/(totalWeight+1)
 
-        totalWeight += 1
-        flag = True
+            totalWeight += 1
+            flag = True
+    except:
+        print("error happened")
     print("Total Number of Files went through BFA: ",totalWeight)
     return [typeSig,coFactor]
 
@@ -48,6 +51,8 @@ def byteSignature(filePath):
             signature[int.from_bytes(byte,ByteOrder)] += 1
             byte = f.read(1)
     maximum = float(max(signature))
+    if maximum == 0:
+        maximum = 1
     signature = [ulaw(float(x)/maximum) for x in signature]
     return signature
 

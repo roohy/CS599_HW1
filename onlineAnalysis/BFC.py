@@ -20,15 +20,17 @@ def BFCfunction(type, collection,bucket):
         tempCoFactor.append(0)
     flag = False
     dfc = []
-    for file in collection.find({'type':type}):
-        bucket.download_file(file['key'],'temp')
-        signature = byteSignature('temp')
-        if flag:
-            mergeDFC(dfc, signature, totalWeight)
-        else:
-            dfc = crossCorrelation(signature)
-        totalWeight += 1
-
+    try:
+        for file in collection.find({'type':type}):
+            bucket.download_file(file['key'],'temp')
+            signature = byteSignature('temp')
+            if flag:
+                mergeDFC(dfc, signature, totalWeight)
+            else:
+                dfc = crossCorrelation(signature)
+            totalWeight += 1
+    except:
+        print("error happened")
     print("Total Number of Files went through BFC: ",totalWeight)
     return dfc
 

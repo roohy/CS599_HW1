@@ -39,10 +39,10 @@ if __name__ == '__main__':
     collection = DB[config.COLLECTIONNAME]
     for type in config.TYPE:
         print("Analysis for Type "+ type)
-        a =BFAfunction(type,collection,bucket)
+        '''a =BFAfunction(type,collection,bucket)
         storeSig(type,BASE+type.replace('/','_')+'_BFA', a[0],a[1])
         dfc = BFCfunction(type, collection, bucket)
-        storeJSON(BASE+type.replace('/','_')+"_BFC",{'file_type':type,'analysis':'BFC','BFC':dfc})
+        storeJSON(BASE+type.replace('/','_')+"_BFC",{'file_type':type,'analysis':'BFC','BFC':dfc})'''
         fht = FHTfunction(type,collection, 8, bucket)
         storeJSON(BASE+type.replace('/','_')+'_FHT_8',{'file_type':type,'analysis':'FHT-8','FHT':fht})
         fht = FHTfunction(type,collection, 16, bucket)

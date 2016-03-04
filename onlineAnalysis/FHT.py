@@ -12,11 +12,14 @@ def FHTfunction(type, collection,length,bucket):
     flag = False
     freq = makeMatrix(length)
     # co = makeMatrix(length)
-    for file in collection.find({'type':type}):
-        bucket.download_file(file['key'],'temp')
-        byteSignature('temp',freq,totalWeight,length)
+    try:
+        for file in collection.find({'type':type}):
+            bucket.download_file(file['key'],'temp')
+            byteSignature('temp',freq,totalWeight,length)
 
-        totalWeight += 1
+            totalWeight += 1
+    except:
+        print("error happened")
     return freq
 
 def makeMatrix(length):
@@ -34,7 +37,6 @@ def byteSignature(filePath,freq,weight,length):
         byteCount = 0
         # print(int.from_bytes(byte,ByteOrder))
         while byte != b"":
-            byteCount += 1
             byte = int.from_bytes(byte,ByteOrder)
             if byteCount > length-1:
                 break
@@ -46,5 +48,6 @@ def byteSignature(filePath,freq,weight,length):
                 #co[byteCount][i] = ((co[byteCount][i]*weight)+cocal(freq[byteCount][i], value))/(weight+1)
                 freq[byteCount][i] = ((freq[byteCount][i]*weight)+value)/(float(weight)+1.0)
 
+            byteCount += 1
             # Do stuff with byte.
             byte = f.read(1)

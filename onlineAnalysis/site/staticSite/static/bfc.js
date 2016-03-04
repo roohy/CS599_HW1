@@ -22,14 +22,14 @@ function bfcOnline(event,types){
 
 function makeReadyBFC(types){
     for (var i = 0 ; i < types.length ; i=i+1){
-        $('#main-row').append("<div id='"+ types[i].replace('+','-') +"' class='BFCholder col-md-12'> <h1>BFC Diagram for type: "+ types[i]+"</h1> </div>");
+        $('#main-row').append("<div id='"+ types[i].replace('+','-').replace('.','-').replace('.','-') +"' class='BFCholder col-md-12'> <h1>BFC Diagram for type: "+ types[i]+"</h1> </div>");
 
     }
 }
 function getSignatureAndRunBFC(type){
     url = "./static/data/"+type+"_BFC";
     d3.json(url,function(data){
-        d3renderBFC(data,'#'+type.replace('+','-'));
+        d3renderBFC(data,'#'+type.replace('+','-').replace('.','-').replace('.','-'));
     });
 }
 

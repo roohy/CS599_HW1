@@ -22,14 +22,14 @@ function fhtOnline(event,types,bCount){
 
 function makeReadyFHT(types){
     for (var i = 0 ; i < types.length ; i=i+1){
-        $('#main-row').append("<div id='"+ types[i].replace('+','-') +"' class='FHTholder col-md-12'> <h1>FHT Diagram for type: "+ types[i]+"</h1> </div>");
+        $('#main-row').append("<div id='"+ types[i].replace('+','-').replace('.','-').replace('.','-') +"' class='FHTholder col-md-12'> <h1>FHT Diagram for type: "+ types[i]+"</h1> </div>");
 
     }
 }
 function getSignatureAndRunFHT(type,bCount){
     url = "./static/data/"+type+"_FHT_"+bCount;
     d3.json(url,function(data){
-        d3renderFHT(data.FHT,'#'+type.replace('+','-'));
+        d3renderFHT(data.FHT,'#'+type.replace('+','-').replace('.','-').replace('.','-'));
     });
 }
 

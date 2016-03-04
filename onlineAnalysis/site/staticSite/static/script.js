@@ -81,7 +81,7 @@ function clearPage(event){
     $(event.target.parentNode).addClass('active');
 }
 TYPES = ['application_x-msdownload','application_x-tika-msoffice','application_atom+xml','application_rdf+xml','video_mpeg','audio_x-wav','image_gif','image_svg+xml','image_x-ms-bmp','video_quicktime',
-        'video_x-m4v','video_x-msvideo','xscapplication_zip','application_octet-stream'];
+        'video_x-m4v','video_x-msvideo','xscapplication_zip','application_octet-stream','application_vnd.google-earth.kml+xml','image_vnd.microsoft.icon'];
 document.__types=['application_x-msdownload','application_x-tika-msoffice','application_atom+xml','application_rdf+xml','video_mpeg'];
 
 $(document).ready(function(){

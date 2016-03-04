@@ -23,14 +23,14 @@ function bfaOnline(event,types){
 
 function makeReadyBFA(types){
     for (var i = 0 ; i < types.length ; i=i+1){
-        $('#main-row').append("<div id='"+ types[i].replace('+','-') +"' class='BFAholder col-md-12'> <h1>BFA Diagram for type: "+ types[i]+"</h1> </div>");
+        $('#main-row').append("<div id='"+ types[i].replace('+','-').replace('.','-').replace('.','-') +"' class='BFAholder col-md-12'> <h1>BFA Diagram for type: "+ types[i]+"</h1> </div>");
 
     }
 }
 function getSignatureAndRunBFA(type){
     url = "./static/data/"+type+"_BFA";
     d3.json(url,function(data){
-        d3renderBFA(data,'#'+type.replace('+','-'));
+        d3renderBFA(data,'#'+type.replace('+','-').replace('.','-').replace('.','-'));
     });
 }
 

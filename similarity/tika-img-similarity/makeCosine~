@@ -1,0 +1,6 @@
+INPUT="/home/roohy/PycharmProject/CS599_HW1/S3_Downloader/com"
+OUTPUT="COSINECSV"
+ACCEPT="--accept png pdf jpg jpeg gif"
+python cosine_similarity.py --inputDir $INPUT --outCSV $OUTPUT $ACCEPT
+python edit-cosine-cluster.py $OUTPUT
+python3 -m http.server 8080 
